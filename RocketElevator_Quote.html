@@ -11,7 +11,8 @@
 		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
 
 		<!-- WEB FONTS : use %7C instead of | (pipe) -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+		<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" /> -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 		<!-- CORE CSS -->
 		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -27,6 +28,10 @@
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<!-- <body style=""> -->
+		<!-- Adding CSS Style tag in the next line to HIDE some unused input forms -->
+		<style> .nodisplay { display: none;} </style>
+		<!-- /Adding CSS Style tag in the next line to HIDE some unused input forms -->
 	</head>
 
 	<!--
@@ -222,94 +227,87 @@
 			<section id="form">
 				<div class="container">
 					<header class="text-center mb-60">
-						<!-- <p class="lead font-lato"></p> -->
 						<h3>Please fill in the form  <br>
 							to have an instant estimation of the total price. </h3>
 						<hr />
 					</header>
 					<div>
-							<!--
-									MESSAGES
-									
-										How it works?
-										The form data is posted to php/contact.php where the fields are verified!
-										php.contact.php will redirect back here and will add a hash to the end of the URL:
-											#alert_success      = email sent
-											#alert_failed       = email not sent - internal server error (404 error or SMTP problem)
-											#alert_mandatory    = email not sent - required fields empty
-											Hashes are handled by assets/js/contact.js
-										Form data: required to be an array. Example:
-											contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-											Also, add `required` to input fields if is a mandatory field. 
-											Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-										PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-													ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-										WARNING! Do not change the `email` and `name`!
-													contact[name][required]     - should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-													contact[email][required]    - should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-								-->
-							<!-- Alert Success -->
-							<div id="alert_success" class="alert alert-success mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Thank You!</strong> We have received your massage!
-							</div><!-- /Alert Success -->
-							<!-- Alert Failed -->
-							<div id="alert_failed" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>[SMTP] Error!</strong> Internal server error!
-							</div><!-- /Alert Failed -->
-							<!-- Alert Mandatory -->
-							<div id="alert_mandatory" class="alert alert-danger mb-30">
-								<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-								<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-							</div><!-- /Alert Mandatory -->
+						<!--
+								MESSAGES
+								
+									How it works?
+									The form data is posted to php/contact.php where the fields are verified!
+									php.contact.php will redirect back here and will add a hash to the end of the URL:
+										#alert_success      = email sent
+										#alert_failed       = email not sent - internal server error (404 error or SMTP problem)
+										#alert_mandatory    = email not sent - required fields empty
+										Hashes are handled by assets/js/contact.js
+									Form data: required to be an array. Example:
+										contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
+										Also, add `required` to input fields if is a mandatory field. 
+										Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
+									PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
+												ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
+									WARNING! Do not change the `email` and `name`!
+												contact[name][required]     - should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+												contact[email][required]    - should stay as it is because PHP is using it for AddReplyTo (phpmailer)
+							-->
+						<!-- Alert Success -->
+						<div id="alert_success" class="alert alert-success mb-30">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<strong>Thank You!</strong> We have received your massage!
+						</div><!-- /Alert Success -->
+						<!-- Alert Failed -->
+						<div id="alert_failed" class="alert alert-danger mb-30">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<strong>[SMTP] Error!</strong> Internal server error!
+						</div><!-- /Alert Failed -->
+						<!-- Alert Mandatory -->
+						<div id="alert_mandatory" class="alert alert-danger mb-30">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<strong>Sorry!</strong> You need to complete all mandatory (*) fields!
+						</div><!-- /Alert Mandatory -->
 
-							
-
-							<!-- removed form follwoing form : action="php/contact.php"  method="post"  enctype="multipart/form-data"-->
-							<!-- <form> -->
-							
-								<!-- <fieldset> -->
-									<div class="row">
-										<div class="col-lg-4"> 
-											<h2>Step 1</h2>
-											<form class="dropdown">
-												<select id="typeSelector" class="form-control">
-													<option value="">--- Select building type ---</option>
-													<option value="residential">Residential</option>
-													<option value="commercial">Commercial</option>
-													<option value="corporate">Corporate</option>
-													<!-- the following divider line is not working  -->
-													<div class="dropdown-divider"></div>
-													<option value="hybrid">Hybrid</option>
-												</select>
-											</form>
-										</div>
-										<!-- Temporary Form to be removed ---  -->
-										<div class="col-lg-8"> 
-											<form onchange="Calculations()">
-												<div class="row">
-													<div class="col-lg-7">
-														<h2>Step 2</h2>
-														<!-- Adding CSS Style tag in the next line to HIDE some unused input forms -->
-														<style> .nodisplay { display: none;} </style>
-														<!-- /Adding CSS Style tag in the next line to HIDE some unused input forms -->
-														
-														<label for=""> More details about the building: <span class="red-star">*</span></label>
-														<form id="step2" class="form-inline" action="" >
-														<ul>
-															<div class="input-group mb-2 mr-sm-2">
-																<div class="input-group-prepend">
+						<!-- <form> -->
+							<!-- <fieldset> -->
+								<div class="row">
+									<div class="col-lg-4"> 
+										<h2>Step 1</h2>
+										<form class="dropdown">
+											<select id="typeSelector" class="form-control">
+												<option value="">--- Select building type ---</option>
+												<option value="residential">Residential</option>
+												<option value="commercial">Commercial</option>
+												<option value="corporate">Corporate</option>
+												<!-- the following divider line is not working  -->
+												<div class="dropdown-divider"></div>
+												<option value="hybrid">Hybrid</option>
+											</select>
+										</form>
+									</div>
+									<!-- Temporary Form to be removed ---  -->
+									<div class="col-lg-8"> 
+										<form onchange="Calculations()">
+											<div class="row">
+												<div class="col-lg-7">
+													<h2>Step 2</h2>
+													
+													
+													<label for=""> More details about the building: <span class="red-star">*</span></label>
+													<form id="step2" class="form-inline" action="" >
+														<!-- <div class="input-group mb-2 mr-sm-2">
+															<div class="input-group-prepend">
 																<div class="input-group-text">Number of apparments:</div>
-																</div>
-																<input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
 															</div>
-															<div class="input-group mb-2 mr-sm-2">
-																<div class="input-group-prepend">
-																<div class="input-group-text">Number of separate tenant companies:</div>
-																</div>
-																<input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
+															<input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
+														</div>
+														<div class="input-group mb-2 mr-sm-2">
+															<div class="input-group-prepend">
+															<div class="input-group-text">Number of separate tenant companies:</div>
 															</div>
+															<input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
+														</div> -->
+														<ul>
 															<li class=" nodisplay residential" type="square">
 																<label class="" for="nAprt">Number of apparments:
 																	<input class=" step2Form" type="number" id="nAprt" name="nAprt" min="0" max="1000" value="0">
@@ -356,36 +354,36 @@
 																</label>
 															</li>
 														</ul>
-														</form>	
-													</div>
-													<div class="col-lg-5">
-														<h2>Step 3</h2>
-														<label for=""> Select the class	 <span class="red-star">*</span> </label>
-														<form id="lineType" class="form-check">
-															<label class="form-check-label radio" for="radio-btn1">
-																<input class="form-check-input" type="radio" name="radio-btn" id="radio-btn1" value="standard">
-																<i></i>Standard
-															</label><br>
-															<label class="form-check-label radio" for="radio-btn2">
-																<input class="form-check-input" type="radio" name="radio-btn" id="radio-btn2" value="premium">
-																<i></i>Premium
-															</label><br>
-															<label class="form-check-label radio" for="radio-btn3">
-																<input class="form-check-input" type="radio" name="radio-btn" id="radio-btn3" value="excelium" >
-																<i></i>Excelium
-															</label>
-														</form>
-													</div>
+													</form>	
 												</div>
-											</form>
-										</div>	
-									</div>
-								<!-- </fieldset> -->
-							</form>	
-							<!-- </form> -->
-							<!-- --- Display results -->
+												<div class="col-lg-5">
+													<h2>Step 3</h2>
+													<label for=""> Select the class	 <span class="red-star">*</span> </label>
+													<form id="lineType" class="form-check">
+														<label class="form-check-label radio" for="radio-btn1">
+															<input class="form-check-input" type="radio" name="radio-btn" id="radio-btn1" value="standard">
+															<i></i>Standard
+														</label><br>
+														<label class="form-check-label radio" for="radio-btn2">
+															<input class="form-check-input" type="radio" name="radio-btn" id="radio-btn2" value="premium">
+															<i></i>Premium
+														</label><br>
+														<label class="form-check-label radio" for="radio-btn3">
+															<input class="form-check-input" type="radio" name="radio-btn" id="radio-btn3" value="excelium" >
+															<i></i>Excelium
+														</label>
+													</form>
+												</div>
+											</div>
+										</form>
+									</div>	
+								</div>
+							<!-- </fieldset> -->
+						<!-- </form> -->
+						<!-- --- Display results -->
 					
 						<div id="results" class="container">
+							<div id="error"></div>
 							<div class="row" >
 								<div class="col-md-6">
 									<div id="line"></div>
@@ -401,7 +399,6 @@
 					<!-- --- /Display results  -->
 					</div>
 				</div>
-				
 			</section>
 			<!-- /Quote Form -->
 
