@@ -270,7 +270,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family:'Open Sans',Arial,Helvetica,sans-serif;
+	font-family:'Roboto','Open Sans',Arial,Helvetica,sans-serif;
 	font-weight:600;
 	color:#414141;
 	position: relative;
@@ -5437,10 +5437,11 @@ a.btn.btn-sm {
 
 /**	19. Counters & Countdown
 *************************************************** **/
+/* removed from font-family: "   ,'Open Sans'   " */
 .countTo-sm,
 .countTo-md,
 .countTo-lg {
-	font-family:'Raleway', 'Open Sans', Arial, Helvetica, sans-serif;
+	font-family: 'Roboto', 'Raleway', Arial, Helvetica, sans-serif;
 }
 .countTo-sm span.countTo {
 	margin-bottom:20px;
@@ -5488,9 +5489,10 @@ a.btn.btn-sm {
 
 
 /* Countdown */
+/* removed from font-family: "   ,'Open Sans'   " */
 .countdown { 
 	display: block; 
-	font-family:'Raleway', 'Open Sans', Arial, Helvetica, sans-serif;
+	font-family:'Roboto', 'Raleway', Arial, Helvetica, sans-serif;
 }
 
 .countdown-row {
@@ -8788,13 +8790,14 @@ div.mega-price-table .pricing h4 sup,
 div.mega-price-table .pricing h4 sub {
 	font-size:34px;
 }
+/* removed from font-family: "   ,'Open Sans'   " */
 div.mega-price-table .pricing-head small {
 	font-size:12px;
 	line-height:40px;
 	display:block;
 	color:rgba(255,255,255,0.7);
 	font-weight:300;
-	font-family:'Open Sans', Arial, Hevletica, sans-serif;
+	font-family:'Roboto', Arial, Hevletica, sans-serif;
 }
 
 div.mega-price-table .pricing-desc li,
