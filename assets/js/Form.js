@@ -1,13 +1,4 @@
-
-// Note
-// *** How to seleect specific class of li s: ***
-// $("ul li.Residetntial")
-
-
-
-
-
-
+// This fil is dedicated to all the calucaltion related to the Quote Form from RocketElevators Co. website
 // --- Quote calculation variables
 var doorPerFloorN;
 var cagesN;
@@ -23,10 +14,7 @@ var LineType;
 // --- /Quote calculation variables
 
 function printResult(){
-		// console.log("Error msg: " + NoError);
-		// console.log("radio btn checked: " + $("input[name='radio-btn']:checked").val());
 		if ( NoError && (LineType == "standard" || LineType == "premium" || LineType == "excelium")){
-			console.log("Error msg T: " + NoError);
 			$("#error").html("");
 		$("#line").html(" <h4>Note:</h4> <p>You have selected <strong>'" + LineType + " line'</strong> for which <br>the unit price of elevator cage is  " 
 		+ unitCagePrice + " CAD  and<br> the installation fee is " + installationFeeRate * 100 + "%.</p>");
@@ -34,8 +22,6 @@ function printResult(){
 		$("#note").html("<p> Based on the provided information the rules recommend to install a total of <br><strong>" + cagesN + " cages </strong> in <strong>" + columnN + " columns</strong>.</p>");
 		}
 		else{
-			console.log("Error msg F: " + NoError);
-			// console.log("radio btn checked F: " + $("input[name='radio-btn']:checked").val());
 			$("#error").html("<h2>Please complete the form properly to have a price stimation.</h2> <br>");
 			$("#line").html("");
 			$("#budget").html("");
@@ -90,7 +76,7 @@ $typeSelector.on("change",function(){
 });
 
 
-// --- Calculation of the price on selection of any of the Radio Button
+// --- Calculation of the price 
 
 // $("#mainForm").on("change", function(){
 function Calculations(){
@@ -103,17 +89,6 @@ function Calculations(){
 	var TenantCoNumber = parseInt($("#tntCo").val());
 	var OccupantPerFloor = parseInt($("#occPFlr").val());
 	var HoursNumber = parseInt($("#hrs").val());
-
-	// console.log("#aprt:" + AppartNumber);
-	// console.log("#floors:" + FloorNumber);
-	// console.log("#basement:" + BasementNumber);
-	// console.log("#basement:" + BasementNumber + FloorNumber);
-	// console.log("#distinct buisinesses:" + DistinctBuisinessNumber);
-	// console.log("#parking:" + ParkingSpaceNumber);
-	// console.log("#cages:" + cagesNumber);
-	// console.log("# separate tenant co.:" + TenantCoNumber);
-	// console.log("#occupant per floor:" + OccupantPerFloor);
-	// console.log("# working hours:" + HoursNumber);
 
 	if ($typeSelector.val() == "residential"){
 		columnN = Math.ceil(FloorNumber / 20);
@@ -145,32 +120,66 @@ function Calculations(){
 	totalCagesprice = cagesN * unitCagePrice;
 	totalBudget = (1 + installationFeeRate) * totalCagesprice;
 	
-	if ((HoursNumber <= 24 && HoursNumber > 0) || $typeSelector.val() !== "hybrid"){
-		// window.alert("working hours must be between 0-24 hours");
-		NoError = true;
+	// --- Form Validation
+	if ($typeSelector.val() == "residential"){
+		if(FloorNumber > 0 && BasementNumber >= 0 && AppartNumber > 0){
+			console.log("Residential: " + NoError);
+			NoError = true;
+		}
+		else {
+			console.log("NoError is " + NoError);
+			NoError = false;
+		}
+	}
+	else if ( $typeSelector.val() == "commercial"){
+		if(FloorNumber > 0 && BasementNumber >= 0 && DistinctBuisinessNumber > 0 && ParkingSpaceNumber > 0 && cagesNumber > 0){
+			// window.alert("working hours must be between 0-24 hours");
+			console.log("Commercial: " + NoError);
+			NoError = true;
+		}
+		else {
+			console.log("NoError is " + NoError);
+			NoError = false;
+		}
+	}
+	else if ( $typeSelector.val() == "corporate"){
+		if(FloorNumber > 0 && BasementNumber >= 0 && TenantCoNumber >= 0 && OccupantPerFloor > 0){
+			// window.alert("working hours must be between 0-24 hours");
+			console.log("Corporate: " + NoError);
+			NoError = true;
+		}
+		else {
+			console.log("NoError is " + NoError);
+			NoError = false;
+		}
+	}
+	else if ( $typeSelector.val() == "hybrid"){
+		if((HoursNumber <= 24 && HoursNumber > 0) && FloorNumber > 0 && BasementNumber >= 0 && DistinctBuisinessNumber > 0 && ParkingSpaceNumber > 0 && OccupantPerFloor > 0){
+			// window.alert("working hours must be between 0-24 hours");
+			console.log("Hybrid: " + NoError);
+			NoError = true;
+		}
+		else {
+			console.log("NoError is " + NoError);
+			NoError = false;
+		}
 	}
 	else {
+		console.log("NoError is " + NoError);
 		NoError = false;
 	}
+	// --- /Form Validation
 
 	// --- Display results
 	printResult();
-	
-
 	// console.log("Door per Floor" + doorPerFloorN);
 	// console.log("column number:" + columnN);
 	// console.log("cages number: cages x column: " + cagesN);
 	// console.log("unit cage price: " + unitCagePrice + "--total cages price: " + totalCagesprice + "--total budget: " + totalBudget);
-	
-	
 	// --- /Display results
 	
 };
-
-
-
-
-// --- /Calculation of the price on selection of any of the Radio Button
+// --- /Calculation of the price 
 
 
 

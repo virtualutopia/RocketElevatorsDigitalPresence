@@ -59,11 +59,9 @@
 
 		<!-- SLIDE TOP -->
 		<div id="slidetop">
-
-			<div class="container">
-				
+			<div class="container">				
 				<div class="row">
-
+					
 					<div class="col-md-6">
 						<h6><i class="icon-heart"></i> WHY Rocket Elevators?</h6>
 						<p>Here at Rocket Elevators you will find any type of services related to elevators: installation, modernization, maintenance, or repair. <br>
@@ -80,7 +78,6 @@
 					</div>
 
 				</div>
-
 			</div>
 
 			<a class="slidetop-toggle" href="#"><!-- toggle button --></a>
@@ -167,7 +164,7 @@
 										</a>
 									</li>
 									<li class="dropdown"><!-- Services -->
-										<a href="#Services">
+										<a class="dropdown-toggle" href="#Services">
 											Services
 										</a>
 										 <ul class="dropdown-menu">
@@ -183,7 +180,7 @@
 											</li>
 										</ul> 
 									</li>
-									<li class="dropdown mega-menu"><!-- Contact us -->
+									<li><!-- Contact us -->
 										<a  href="#contact">
 											Contact us
 										</a>
@@ -245,7 +242,7 @@
 						<!-- <form> -->
 							<!-- <fieldset> -->
 								<div class="row">
-									<div class="col-lg-4"> 
+									<div class="col-lg-3"> 
 										<h2>Step 1</h2>
 										<form class="dropdown">
 											<select id="typeSelector" class="form-control">
@@ -260,27 +257,13 @@
 										</form>
 									</div>
 									<!-- Temporary Form to be removed ---  -->
-									<div class="col-lg-8"> 
+									<div class="col-lg-9"> 
 										<form onchange="Calculations()">
 											<div class="row">
 												<div class="col-lg-7">
-													<h2>Step 2</h2>
-													
-													
+													<h2>Step 2</h2>																										
 													<label for=""> More details about the building: <span class="red-star">*</span></label>
-													<form id="step2" class="form-inline" action="" >
-														<!-- <div class="input-group mb-2 mr-sm-2">
-															<div class="input-group-prepend">
-																<div class="input-group-text">Number of apparments:</div>
-															</div>
-															<input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
-														</div>
-														<div class="input-group mb-2 mr-sm-2">
-															<div class="input-group-prepend">
-															<div class="input-group-text">Number of separate tenant companies:</div>
-															</div>
-															<input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="">
-														</div> -->
+													<form id="step2" class="form-inline" action="" >														
 														<ul>
 															<li class=" nodisplay residential" type="square">
 																<label class="" for="nAprt">Number of apparments:
@@ -323,7 +306,7 @@
 																</label>
 															</li>
 															<li class=" nodisplay hybrid" type="square">
-																<label for="hrs">Number of hours of activity per day:
+																<label for="hrs">Number of hours of activity (0-24):
 																	<input class="step2Form" type="number" id="hrs" name="hrs" min="0" max="24" value="0">
 																</label>
 															</li>
@@ -362,7 +345,6 @@
 								<div class="col-md-6">
 									<div id="line"></div>
 									<div id="note"></div>
-									<!-- <div id="note"></div> -->
 								</div>
 								<div class="col-md-6">
 									<div id="budget"></div>
@@ -564,12 +546,8 @@
 		</div>
 		<!-- /wrapper -->
 
-
-
-
 		<!-- SCROLL TO TOP -->
 		<a href="#" id="toTop"></a>
-
 
 		<!-- PRELOADER -->
 		<div id="preloader">
