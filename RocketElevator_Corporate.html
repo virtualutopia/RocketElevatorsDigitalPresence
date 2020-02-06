@@ -316,7 +316,7 @@
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <strong>Sorry!</strong> You need to complete all mandatory (*) fields!
                             </div><!-- /Alert Mandatory -->
-                            <form action="php/contact.php" method="post" enctype="multipart/form-data">
+                            <form action="" method="" enctype="multipart/form-data">
                                 <fieldset>
                                     <input type="hidden" name="action" value="contact_send" />
                                     <div class="row">
@@ -377,47 +377,19 @@
                                 </fieldset>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-check"></i> SEND MESSAGE</button>
+                                        <button id="sendMsg" type="submit" class="btn btn-default"><i class="fa fa-check"></i> SEND MESSAGE</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                         <!-- /FORM -->
 						<!-- INFO -->
-							<!-- Google Map -->
                         <div class="col-md4 col-sm-4">
-                            <h2>Visit Us</h2>
-                            <!-- 
-                            Available heights
-                                h-100
-                                h-150
-                                h-200
-                                h-250
-                                h-300
-                                h-350
-                                h-400
-                                h-450
-                                h-500
-                                h-550
-                                h-600
-                            -->
-							<div id="map" class="h-500 "></div>
-							<script>
-								// Initialize and add the map
-								function initMap() {
-								  // The location of Uluru
-								  var uluru = {lat: 46.842028, lng: -71.280009};
-								  // The map, centered at Uluru
-								  var map = new google.maps.Map(
-									  document.getElementById('map'), {zoom: 12, center: uluru});
-								  // The marker, positioned at Uluru
-								  var marker = new google.maps.Marker({position: uluru, map: map});
-								}
-							</script>
-							<script async defer
-								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR7yeg5h1M4Xp9ZKWobxjp7M5rtg4-x3U&callback=initMap">
-							</script>
-								<!-- /Google Map -->
+							<h2>Visit Us</h2>
+							<!-- Google Map -->
+                            <iframe width="450" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJP_7K4dCXuEwRcBbHktmyY5g&key=AIzaSyDeDmU_7JBNhE-CN3LOLnp0z2gR_P4yYAs" allowfullscreen>
+							</iframe>
+							<!-- /Google Map -->
                             <hr />
                             <p>
                                 <span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> PO Box 11111, 2222 Grand Allée St, Quebec City, Quebec Canada, QC G1J 1K1</span>
@@ -431,57 +403,30 @@
             </section>
             <!-- /CONTACT -->
 
-
-
-
-
-			
 			<!-- FOOTER -->
 			<footer id="footer">
 				<div class="container">
-
-
 					<div class="row">
-
 						<!-- col #1 -->
 						<div class="col-md-8">
-
 							<h3 class="letter-spacing-1">WHY Rocket Elevators?</h3>
-
 							<!-- Small Description -->
 							<p>Here at Rocket Elevators you will find any type of services related to elevators: installation, modernization, maintenance, or repair. <br>
 								do not hesitate to visit the pages on our <a href="RocketElevator_Residential.html">residential</a> or <a href="RocketElevator_Corporate.html">commercial</a> services </p>
 							<h2>1-800-555-0000</h2>
 						</div>
 						<!-- /col #1 -->
-
 						<!-- col #2 -->
-						
-						<!-- #### to be removed ##### -->
-
-						<!-- <div class="col-md-4">
-							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3> -->
-
-							<!-- Newsletter Form -->
-							<!-- <p>Subscribe to Our Newsletter to get Important News & Offers</p>
-
-							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
-									<span class="input-group-btn">
-										<button class="btn btn-success" type="submit">Subscribe</button>
-									</span>
-								</div>
-							</form> -->
-							<!-- /Newsletter Form -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+							<p>
+								<span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> PO Box 11111, 2222 Grand Allée St, Quebec City, Quebec Canada, QC G1J 1K1</span>
+								<span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:(581) 701-0303">1-800-555-0000</a></span>
+								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:support@rocketelevators.com">support@rocketelevators.com</a></span>
+							</p>
 						<!-- /col #2 -->
-
 					</div>
-
-
 				</div>
-
 				<div class="copyright">
 					<div class="container ">
 						<ul class="float-right m-0 list-inline mobile-block">
@@ -492,7 +437,6 @@
 						&copy; All Rights Reserved, Company LTD
 					</div>
 				</div>
-
 			</footer>
 			<!-- /FOOTER -->
 		</div>
