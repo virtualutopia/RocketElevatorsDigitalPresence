@@ -691,7 +691,7 @@ body.boxed #wrapper {
 	display: block;
 	color:#888;
 	font-size:13px;
-	background-color:#363839;
+	background-color:#06152e;
 	z-index: 1500;
 	position: absolute;
 	top: 0; right: 0; left:0;
@@ -748,7 +748,7 @@ body.boxed #wrapper {
 	height:35px;
 	position: absolute;
 	right: 0; bottom:-35px;
-	border-top: 35px solid #363839;
+	border-top: 35px solid #06152e;
 	border-left: 35px solid transparent;
 
 	display:inline-block;
@@ -787,7 +787,7 @@ body.boxed #wrapper {
 	top: 0; right: -280px; bottom:0;
 	width:280px;
 	z-index: 3000;
-	background-color:#363839;
+	background-color:#06152e;
 	
 	overflow:hidden;
 	display:none;
@@ -850,7 +850,7 @@ body.boxed #wrapper {
 	/* colors */
 	#sidepanel.sidepanel-dark {
 		color:#ddd;
-		background-color:#363839;
+		background-color:#06152e;
 	}
 	#sidepanel.sidepanel-light {
 		color:#111;
@@ -2980,7 +2980,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 	
 	#topBar.dark {
 		color:#ccc;
-		background-color:#363839;
+		background-color:#06152e;
 		border-bottom-color:rgba(255,255,255,0.1);
 	}
 	#topBar.dark .dropdown-menu a,
@@ -2999,7 +2999,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 		border-right:0;
 	}
 	#topBar.dark .dropdown-menu {
-		background-color:#363839;
+		background-color:#06152e;
 	}
 	#topBar.dark .dropdown-menu .divider {
 		background-color:#444;
@@ -8850,14 +8850,14 @@ section.dark-2 div.category-grid .card {
 	color: rgba(255,255,255,0.6);
 	display: block;
 
-	background: #313131;
-	background: -moz-linear-gradient(top, #555555 0%, #313131 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a1d2b), color-stop(100%, #313131));
-	background: -webkit-linear-gradient(top, #555555 0%, #313131 100%);
-	background: -o-linear-gradient(top, #555555 0%, #313131 100%);
-	background: -ms-linear-gradient(top, #555555 0%, #313131 100%);
-	background: linear-gradient(to bottom, #555555 0%,#313131 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#313131',GradientType=0 );
+	background: #113617;
+	background: -moz-linear-gradient(top, #06152e 0%, #113617 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1a1d2b), color-stop(100%, #113617));
+	background: -webkit-linear-gradient(top, #06152e 0%, #113617 100%);
+	background: -o-linear-gradient(top, #06152e 0%, #113617 100%);
+	background: -ms-linear-gradient(top, #06152e 0%, #113617 100%);
+	background: linear-gradient(to bottom, #06152e 0%,#113617 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#06152e', endColorstr='#113617',GradientType=0 );
 }
 #footer>.container {
 	padding-top:60px;

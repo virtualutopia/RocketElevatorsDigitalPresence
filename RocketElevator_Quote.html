@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Rocket Elevator Quote Form</title>
-		<meta name="description" content="" />
-		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+		<meta name="RocketElevators Home Page" content="" />
+		<meta name="Farid" content="CodeBoxx [www.CodeBoxx.biz/en]" />
 
 		<!-- mobile settings -->
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
@@ -27,10 +27,16 @@
 
 		<!-- PAGE LEVEL SCRIPTS -->
 		<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
-		<link href="assets/css/color_scheme/yellow.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		<link href="assets/css/color_scheme/darkblue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 		<!-- <body style=""> -->
 		<!-- Adding CSS Style tag in the next line to HIDE some unused input forms -->
-		<style> .nodisplay { display: none;} </style>
+		<style> 
+			.nodisplay { display: none;}
+
+			/* #form{
+				background-image: linear-gradient(rgba(250, 245, 245, 0.5), rgba(3, 77, 146, 0.5));
+			} */
+		</style>
 		<!-- /Adding CSS Style tag in the next line to HIDE some unused input forms -->
 	</head>
 
@@ -164,7 +170,7 @@
 										</a>
 									</li>
 									<li class="dropdown"><!-- Services -->
-										<a class="dropdown-toggle" href="#Services">
+										<a class="dropdown-toggle" href="">
 											Services
 										</a>
 										 <ul class="dropdown-menu">
@@ -267,7 +273,7 @@
 														<ul>
 															<li class=" nodisplay residential" type="square">
 																<label class="" for="nAprt">Number of apparments:
-																	<input class=" step2Form" type="number" id="nAprt" name="nAprt" min="0" max="1000" value="0">
+																<input class=" step2Form" type="number" id="nAprt" name="nAprt" min="0" max="1000" value="0">
 																</label>
 															</li>
 															<li class=" nodisplay residential commercial corporate hybrid" type="square">
@@ -363,7 +369,7 @@
 
 
 			<!-- BUTTON CALLOUT -->
-			<a href="#contact" class="btn btn-sm btn-primary fs-20 fullwidth m-0 rad-0 p-40">
+			<a href="index.html#contact" class="btn btn-sm btn-primary fs-20 fullwidth m-0 rad-0 p-40">
 				<span class="font-lato fs-30">
 					Do you need more information? 
 					<strong>Contact us &raquo;</strong>
@@ -371,139 +377,6 @@
 			</a>
 			<!-- /BUTTON CALLOUT -->
 
-
-			
-
-			<!-- CONTACT -->
-            <section id="contact">
-                <div class="container">
-                    <header class="text-center mb-60">
-                        <h2>Contact Us</h2>
-                        <p class="lead font-lato"></p>
-                        <hr />
-                    </header>
-                    <div class="row">
-                        <!-- FORM -->
-                        <div class="col-md-8 col-sm-8">
-                            <h3>Please fill in the form and we will contact you</h3>
-                            
-                            <!--
-                                MESSAGES
-                                
-                                    How it works?
-                                    The form data is posted to php/contact.php where the fields are verified!
-                                    php.contact.php will redirect back here and will add a hash to the end of the URL:
-                                        #alert_success      = email sent
-                                        #alert_failed       = email not sent - internal server error (404 error or SMTP problem)
-                                        #alert_mandatory    = email not sent - required fields empty
-                                        Hashes are handled by assets/js/contact.js
-                                    Form data: required to be an array. Example:
-                                        contact[email][required]  WHERE: [email] = field name, [required] = only if this field is required (PHP will check this)
-                                        Also, add `required` to input fields if is a mandatory field. 
-                                        Example: <input required type="email" value="" class="form-control" name="contact[email][required]">
-                                    PLEASE NOTE: IF YOU WANT TO ADD OR REMOVE FIELDS (EXCEPT CAPTCHA), JUST EDIT THE HTML CODE, NO NEED TO EDIT php/contact.php or javascript
-                                                 ALL FIELDS ARE DETECTED DINAMICALY BY THE PHP
-                                    WARNING! Do not change the `email` and `name`!
-                                                contact[name][required]     - should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-                                                contact[email][required]    - should stay as it is because PHP is using it for AddReplyTo (phpmailer)
-                            -->
-                            <!-- Alert Success -->
-                            <div id="alert_success" class="alert alert-success mb-30">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <strong>Thank You!</strong> We have received your massage!
-                            </div><!-- /Alert Success -->
-                            <!-- Alert Failed -->
-                            <div id="alert_failed" class="alert alert-danger mb-30">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <strong>[SMTP] Error!</strong> Internal server error!
-                            </div><!-- /Alert Failed -->
-                            <!-- Alert Mandatory -->
-                            <div id="alert_mandatory" class="alert alert-danger mb-30">
-                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                <strong>Sorry!</strong> You need to complete all mandatory (*) fields!
-                            </div><!-- /Alert Mandatory -->
-                            <form action="" method="" enctype="multipart/form-data">
-                                <fieldset>
-                                    <input type="hidden" name="action" value="contact_send" />
-                                    <div class="row">
-                                            <div class="col-md-4">
-                                                <label for="contact:name">Full Name <span class="red-star">*</span></label>
-                                                <input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="contact:name">Company Name <span class="red-star">*</span></label>
-                                                <input required type="text" value="" class="form-control" name="contact[company][required]" id="contact:company">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="contact:phone">Phone</label>
-                                                <input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-md-8">
-                                                <label for="contact:email">E-mail Address <span class="red-star">*</span></label>
-                                                <input required type="email" value="" class="form-control" name="contact[email][required]" id="contact:email">
-                                            </div>                                          
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-md-8">
-                                                <label for="contact:pname">Name of project <span class="red-star">*</span></label>
-                                                <input required type="text" value="" class="form-control" name="contact[pname][required]" id="contact:pname">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="contact:department">Department</label>
-                                                <select class="form-control pointer" name="contact[department]">
-                                                    <option value="">--- Select ---</option>
-                                                    <option value="Marketing">Marketing</option>
-                                                    <option value="Webdesign">Webdesign</option>
-                                                    <option value="Architecture">Architecture</option>
-                                                </select>
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-md-12">
-                                                <label for="contact:pdescription">Project Description <span class="red-star">*</span></label>
-                                                <textarea required maxlength="10000" rows="2" class="form-control" name="contact[pdescription]" id="contact:pdescription"></textarea>
-                                            </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label for="contact:message">Message <span class="red-star">*</span></label>
-                                            <textarea required maxlength="10000" rows="5" class="form-control" name="contact[message]" id="contact:message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                            <div class="col-md-12">
-                                                <label for="contact:attachment">File Attachment</label>
-                                                <!-- custom file upload -->
-                                                <input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
-                                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-                                            </div>
-                                    </div>
-                                </fieldset>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <button id="sendMsg" type="submit" class="btn btn-default"><i class="fa fa-check"></i> SEND MESSAGE</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!-- /FORM -->
-                        <!-- INFO -->
-                        <div class="col-md4 col-sm-4">
-                            <h2>Visit Us</h2>
-                            <hr />
-                            <p>
-                                <span class="block"><strong><i class="fa fa-map-marker"></i> Address:</strong> PO Box 11111, 2222 Grand Allée St, Quebec City, Quebec Canada, QC G1J 1K1</span>
-                                <span class="block"><strong><i class="fa fa-phone"></i> Phone:</strong> <a href="tel:(581) 701-0303">1-800-555-0000</a></span>
-								<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:support@rocketelevators.com">support@rocketelevators.com</a></span>
-                            </p>
-                        </div>
-                        <!-- /INFO -->
-                    </div>
-                </div>
-            </section>
-			<!-- /CONTACT -->
 			
 			<!-- FOOTER -->
 			<footer id="footer">
