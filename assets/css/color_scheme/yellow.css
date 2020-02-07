@@ -7,10 +7,13 @@
 		background: #FAB702; /* Firefox */
 	}
 	::-webkit-selection {
-		background: #FAB702; /* Safari */
+		background: rgb(18, 37, 100); /* Safari */
 	}
 
+	
 
+
+	
 	a,
 	a:focus:not(.btn),
 	section.dark a,

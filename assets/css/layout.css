@@ -90,7 +90,9 @@ section {
 	position: relative;
 	padding: 100px 0;
 	border-bottom:rgba(0,0,0,0.1) 1px solid;
-	background-color: #fff;
+	background-color: rgb(255, 255, 255);
+
+	
 
 	/*
 	-webkit-transition: all .400s;
@@ -111,6 +113,11 @@ section {
 	   -moz-box-sizing: border-box !important;
 	   background-size: cover !important;
 			box-sizing: border-box !important;
+}
+#Services, #ProjAward, #News, #Clients, #contact, #form, #Acknowledge {
+	
+	background-image: url('../../assets/rocket-assets/backgrounds/bg2-min.jpg'); 
+	background-repeat: repeat;
 }
 
 
@@ -2085,7 +2092,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 
 	
 	/* Top Options */
-	body.menu-vertical #mainMenu.sidebar-vertical ul.top-links {
+	body.menu-vertical #mainMenu.sidebar-vertical ul-links {
 		margin:10px;
 		border:0 !important;
 	}
@@ -3979,11 +3986,11 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 #toTop {
 	font-size:38px;
 	line-height:33px;
-	background-color: rgba(0,0,0,0.3);
-	color: #FFF;
+	background-color: ;
+	color: rgb(255, 255, 255);
 	position: fixed;
 	height: 35px; width: 40px;
-	right: 6px; bottom: 6px;
+	left: 6px; bottom: 6px;
 	text-align: center;
 	text-transform: uppercase;
 	opacity: 0.9;
@@ -4002,7 +4009,7 @@ body.menu-vertical #mainMenu.sidebar-vertical .navbar-collapse>ul.nav.navbar-nav
 			transition: all 0.2s;
 }
 #toTop:hover {
-	background-color: rgba(0,0,0,0.7);
+	background-color: rgba(174, 247, 180, 0.7);
 }
 #toTop:before {
 	font-family: 'Roboto',"fontawesome";

@@ -22,7 +22,7 @@ function printResult(){
 		$("#note").html("<p> Based on the provided information the rules recommend to install a total of <br><strong>" + cagesN + " cages </strong> in <strong>" + columnN + " columns</strong>.</p>");
 		}
 		else{
-			$("#error").html("<h2>Please complete the form properly to have a price stimation.</h2> <br>");
+			$("#error").html("<h2>Please complete the form properly to have a price estimation.</h2> <br>");
 			$("#line").html("");
 			$("#budget").html("");
 			$("#note").html("");
@@ -38,7 +38,7 @@ $typeSelector.on("change",function(){
 	printResult();
 	$("input[name='radio-btn']").prop("checked", false);
 	for (var i = 0; i < $(".step2Form").length; i++){
-		$(".step2Form")[i].value = 0;
+		$(".step2Form")[i].value = null;
 	}
 	if ($typeSelector.val() == "residential"){
 		for (var i = 0; i < $("li.nodisplay").length; i++){
